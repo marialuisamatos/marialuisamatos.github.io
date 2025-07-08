@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="src/icons/cogumelo-icon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/styles/style.css" />
+        <link rel="stylesheet" href="/styles/game.css" />
+        <title>Portfólio da Isa</title>
+    </head>
+
+    <body>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="src/dowload/Curriculo - Maria Luisa Silva Matos.pdf" download>Currículo</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#game">Vamos Jogar?</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <header>
+            <div class="center">
+                <img src="src/me.jpeg" alt="Imagem de Maria Luisa" />
+            </div>
+            <h1>Maria Luisa</h1>
+            <h2>Full Stack Dev</h2>
+        </header>
+
+        <div class="conteudo">
+            <div class="sobre">
+                <h3>Sobre</h3>
+                <p>Graduanda em Análise e Desenvolvimento de Sistemas, sou apaixonada por tecnologia e estou sempre em
+                    busca de aprender e aprimorar meus conhecimentos. 🚀💻✨</p>
+            </div>
+
+            <h3>Tecnologias</h3>
+            <div class="grid-tech">
+                <div class="tech-col">
+                    <h4>Front-End</h4>
+                    <ul>
+                        <li>HTML⁵</li>
+                        <li>CSS³</li>
+                        <li>JavaScript</li>
+                        <li>React.JS</li>
+                        <li>Angular</li>
+                    </ul>
+                </div>
+
+                <div class="tech-col">
+                    <h4>Back-End</h4>
+                    <ul>
+                        <li>Node.JS</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+
+                <div class="tech-col">
+                    <h4>Banco de Dados</h4>
+                    <ul>
+                        <li>MongoDB</li>
+                        <li>MySQL</li>
+                        <li>SQL Server</li>
+                    </ul>
+                </div>
+
+                <div class="tech-col">
+                    <h4>Outros</h4>
+                    <ul>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>Machine Learning (Em desenvolvimento)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Projetos Academicos</h3>
+            <div class="projetos-container">
+                <div class="projeto">
+                    <img src="src/conteudo/SJCC 2.png" alt="Projeto 1">
+                    <div class="overlay">
+                        <p>Gerenciamento de Comentários usando Firebase e a API da IA (Google Gemini). Projeto realizado
+                            na Faculdade(FICR) + Porto Digital.</p>
+                    </div>
+                </div>
+                <div class="projeto">
+                    <img src="src/conteudo/Spotfy.png" alt="Projeto 2">
+                    <div class="overlay">
+                        <p>Repica interativa do Spotify com HTML, CSS, React.JS e JavaScript. Projeto realizado na
+                            Alura.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 id="contato">Contato</h3>
+            <div class="contato">
+                <a href="https://github.com/marialuisamatos" target="_blank" rel="noopener noreferrer">
+                    <img src="src/icons/github.svg"></img>
+                    <p>Github</p>
+                </a>
+
+                <a href="https://www.linkedin.com/in/maria-luisa-matos-53a391301?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    target="_blank" rel="noopener noreferrer">
+                    <img src="src/icons/linkedin.svg"></img>
+                    <p>Linkedin</p>
+                </a>
+
+                <a href="https://www.instagram.com/https.isamts/" target="_blank" rel="noopener noreferrer">
+                    <img src="src/icons/insta.webp">
+                    <p>Instagram</p>
+                </a>
+            </div>
+
+            <div class="game-container" id="game">
+                <h3>🎮 Game interativo 🍄</h3>
+                <div class="game">
+                    <img src="src/mario.png" id="mario" alt="Mario" />
+                    <img src="src/cogumenlo-game.png" id="cogumelo" alt="Cogumelo" />
+                    <div id="cronometro">Tempo: 00:00</div>
+                    <div class="controls">
+                        <button id="startBtn">Iniciar Jogo</button>
+                        <button id="restartBtn" style="display: none;">Reiniciar</button>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>&copy; 2025 Maria Luísa Matos. Todos os direitos reservados.</p>
+            </footer>
+
+            <script src="game.js"></script>
+    </body>
+
+</html>

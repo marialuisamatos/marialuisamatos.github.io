@@ -10,7 +10,6 @@ let checkCollision;
 let demoInterval;
 let jogoAtivo = false;
 
-// ⏱️ Cronômetro
 function iniciarCronometro() {
   cronometroInterval = setInterval(() => {
     segundos++;
@@ -20,7 +19,6 @@ function iniciarCronometro() {
   }, 1000);
 }
 
-// 🧹 Resetar Jogo
 function resetarJogo() {
   segundos = 0;
   cronometroEl.innerText = 'Tempo: 00:00';
@@ -32,12 +30,11 @@ function resetarJogo() {
   restartBtn.style.display = 'none';
 }
 
-// 🎮 Iniciar Jogo Real
 function iniciarJogo() {
   if (jogoAtivo) return;
 
   jogoAtivo = true;
-  clearInterval(demoInterval); // Para a demonstração
+  clearInterval(demoInterval); 
 
   iniciarCronometro();
   cogumelo.style.left = '100%';
@@ -47,9 +44,6 @@ function iniciarJogo() {
     const marioBottom = parseInt(window.getComputedStyle(mario).getPropertyValue('bottom'));
     const cogumeloLeft = parseInt(window.getComputedStyle(cogumelo).getPropertyValue('left'));
 
-    // ❌ NENHUM pulo automático no jogo!
-
-    // Verifica colisão
     if (cogumeloLeft < 90 && cogumeloLeft > 50 && marioBottom < 40) {
       alert("Game Over!");
       cogumelo.style.animation = 'none';
@@ -66,7 +60,6 @@ function iniciarJogo() {
   restartBtn.style.display = 'none';
 }
 
-// 🔁 Reiniciar
 function reiniciarJogo() {
   resetarJogo();
   jogoAtivo = false;
@@ -74,7 +67,6 @@ function reiniciarJogo() {
   restartBtn.style.display = 'none';
 }
 
-// ⬆️ Pulo manual
 function jump() {
   if (!jogoAtivo) return;
   if (!mario.classList.contains('jump')) {
@@ -85,7 +77,6 @@ function jump() {
   }
 }
 
-// 🕹️ Demonstração antes do jogo
 function iniciarDemo() {
   cogumelo.style.animation = 'moveCogumelo 2s infinite linear';
 
@@ -102,7 +93,6 @@ function iniciarDemo() {
   }, 10);
 }
 
-// 🎯 Tecla pressionada para pular no jogo
 document.addEventListener('keydown', (e) => {
   if ((e.code === 'Space' || e.code === 'ArrowUp') && jogoAtivo) {
     jump();
@@ -112,10 +102,8 @@ document.addEventListener('keydown', (e) => {
 startBtn.addEventListener('click', iniciarJogo);
 restartBtn.addEventListener('click', reiniciarJogo);
 
-// Iniciar demonstração ao carregar
 iniciarDemo();
 
-// Animação do cogumelo
 const styleSheet = document.styleSheets[0];
 styleSheet.insertRule(`
   @keyframes moveCogumelo {

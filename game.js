@@ -113,3 +113,14 @@ styleSheet.insertRule(`
     100% { left: -40px; }
   }
 `, styleSheet.cssRules.length);
+
+const touchOverlay = document.getElementById('touchOverlay');
+
+touchOverlay.addEventListener('touchstart', (e) => {
+  e.preventDefault();
+  if (jogoAtivo) jump();
+});
+
+touchOverlay.addEventListener('pointerdown', (e) => {
+  if (jogoAtivo) jump();
+});

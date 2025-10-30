@@ -114,24 +114,20 @@ styleSheet.insertRule(`
   }
 `, styleSheet.cssRules.length);
 
-// Permitir pulo por toque em telas (mobile)
-document.addEventListener('touchstart', (e) => {
-  // Evita que o toque role a tela em celulares
-  e.preventDefault();
+// --- Permitir pulo em qualquer toque de tela (com prioridade máxima) ---
 
-  // Evita conflito se o toque for em um botão da interface
-  if (e.target.closest('button')) return;
+window.addEventListener('touchstart', (e) => {
+  e.preventDefault(); // impede scroll
+  e.stopPropagation(); // impede interferência de overlays
 
-  // Só pula se o jogo estiver ativo
-  if (jogoAtivo) {
+  if (jogoAtivo && !mario.classList.contains('jump')) {
     jump();
   }
-}, { passive: false });
+}, { passive: false, capture: true });
 
-// Também cobre cliques (para desktops com tela sensível ao toque)
-document.addEventListener('pointerdown', (e) => {
-  if (e.target.closest('button')) return;
-  if (jogoAtivo) {
+// fallback para pointer (notebooks touchscreen ou mouse)
+window.addEventListener('pointerdown', (e) => {
+  if (jogoAtivo && !mario.classList.contains('jump')) {
     jump();
   }
 });

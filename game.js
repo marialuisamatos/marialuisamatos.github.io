@@ -115,7 +115,22 @@ styleSheet.insertRule(`
 `, styleSheet.cssRules.length);
 
 // Permitir pulo por toque em telas (mobile)
-document.addEventListener('touchstart', () => {
+document.addEventListener('touchstart', (e) => {
+  // Evita que o toque role a tela em celulares
+  e.preventDefault();
+
+  // Evita conflito se o toque for em um botão da interface
+  if (e.target.closest('button')) return;
+
+  // Só pula se o jogo estiver ativo
+  if (jogoAtivo) {
+    jump();
+  }
+}, { passive: false });
+
+// Também cobre cliques (para desktops com tela sensível ao toque)
+document.addEventListener('pointerdown', (e) => {
+  if (e.target.closest('button')) return;
   if (jogoAtivo) {
     jump();
   }

@@ -117,15 +117,13 @@ styleSheet.insertRule(`
 // --- Permitir pulo em qualquer toque de tela (com prioridade máxima) ---
 
 window.addEventListener('touchstart', (e) => {
-  e.preventDefault(); // impede scroll
-  e.stopPropagation(); // impede interferência de overlays
-
+  e.preventDefault();
+  e.stopPropagation();
   if (jogoAtivo && !mario.classList.contains('jump')) {
     jump();
   }
 }, { passive: false, capture: true });
 
-// fallback para pointer (notebooks touchscreen ou mouse)
 window.addEventListener('pointerdown', (e) => {
   if (jogoAtivo && !mario.classList.contains('jump')) {
     jump();

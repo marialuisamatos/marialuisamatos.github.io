@@ -101,19 +101,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-startBtn.addEventListener('click', iniciarJogo);
-restartBtn.addEventListener('click', reiniciarJogo);
-
-iniciarDemo();
-
-const styleSheet = document.styleSheets[0];
-styleSheet.insertRule(`
-  @keyframes moveplantaCarnivora {
-    0% { left: 100%; }
-    100% { left: -40px; }
-  }
-`, styleSheet.cssRules.length);
-
 const touchOverlay = document.getElementById('touchOverlay');
 
 touchOverlay.addEventListener('touchstart', (e) => {
@@ -122,5 +109,15 @@ touchOverlay.addEventListener('touchstart', (e) => {
 });
 
 touchOverlay.addEventListener('pointerdown', (e) => {
+  if (jogoAtivo) jump();
+});
+// TOQUE PARA PULAR (mobile e touchscreen)
+const gameDiv = document.querySelector('.game');
+
+gameDiv.addEventListener('touchstart', () => {
+  if (jogoAtivo) jump();
+});
+
+gameDiv.addEventListener('pointerdown', () => {
   if (jogoAtivo) jump();
 });

@@ -113,3 +113,10 @@ styleSheet.insertRule(`
     100% { left: -40px; }
   }
 `, styleSheet.cssRules.length);
+
+// Permitir pulo por toque em telas (mobile)
+document.addEventListener('touchstart', () => {
+  if (jogoAtivo) {
+    jump();
+  }
+});

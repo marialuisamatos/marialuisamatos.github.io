@@ -3,7 +3,8 @@ const plantaCarnivora = document.getElementById('plantaCarnivora');
 const cronometroEl = document.getElementById('cronometro');
 const startBtn = document.getElementById('startBtn');
 const restartBtn = document.getElementById('restartBtn');
-const gameOverText = document.getElementById('gameOverText'); // pega só uma vez
+const gameOverText = document.getElementById('gameOverText');
+const jumpBtn = document.getElementById('jumpBtn'); // botão mobile
 
 let segundos = 0;
 let cronometroInterval;
@@ -16,7 +17,7 @@ function iniciarCronometro() {
     segundos++;
     const minutos = Math.floor(segundos / 60);
     const segundosRestantes = segundos % 60;
-    cronometroEl.innerText = `Tempo: ${String(minutos).padStart(2, '0')}:${String(segundosRestantes).padStart(2, '0')}`;
+    cronometroEl.innerText = `Tempo: ${String(minutos).padStart(2,'0')}:${String(segundosRestantes).padStart(2,'0')}`;
   }, 1000);
 }
 
@@ -30,7 +31,7 @@ function resetarJogo() {
   plantaCarnivora.style.animation = 'moveplantaCarnivora 2s infinite linear';
   restartBtn.style.display = 'none';
   startBtn.style.display = 'inline-block';
-  gameOverText.style.display = 'none'; // esconde o "Game Over" ao resetar
+  gameOverText.style.display = 'none';
 }
 
 function iniciarJogo() {
@@ -95,29 +96,39 @@ function iniciarDemo() {
   }, 10);
 }
 
+// Controles desktop
 document.addEventListener('keydown', (e) => {
   if ((e.code === 'Space' || e.code === 'ArrowUp') && jogoAtivo) {
     jump();
   }
 });
 
-const touchOverlay = document.getElementById('touchOverlay');
+// Controles botões
+startBtn.addEventListener('click', iniciarJogo);
+restartBtn.addEventListener('click', reiniciarJogo);
 
-touchOverlay.addEventListener('touchstart', (e) => {
-  e.preventDefault();
+// Botão mobile
+jumpBtn.addEventListener('click', () => {
   if (jogoAtivo) jump();
 });
 
-touchOverlay.addEventListener('pointerdown', (e) => {
-  if (jogoAtivo) jump();
-});
-// TOQUE PARA PULAR (mobile e touchscreen)
+// Toque na área do jogo (fora do botão) para pular
 const gameDiv = document.querySelector('.game');
-
-gameDiv.addEventListener('touchstart', () => {
+gameDiv.addEventListener('touchstart', (e) => {
+  if (e.target.tagName.toLowerCase() === 'button') return;
+  if (jogoAtivo) jump();
+});
+gameDiv.addEventListener('pointerdown', (e) => {
+  if (e.target.tagName.toLowerCase() === 'button') return;
   if (jogoAtivo) jump();
 });
 
-gameDiv.addEventListener('pointerdown', () => {
-  if (jogoAtivo) jump();
-});
+iniciarDemo();
+
+const styleSheet = document.styleSheets[0];
+styleSheet.insertRule(`
+  @keyframes moveplantaCarnivora {
+    0% { left: 100%; }
+    100% { left: -40px; }
+  }
+`, styleSheet.cssRules.length);

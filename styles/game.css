@@ -190,15 +190,6 @@ button:hover {
     background: #ffffffbd;
 }
 
-/* Toque para pular no mobile */
-.game {
-    touch-action: manipulation; /* Permite toque sem zoom ou delay */
-}
-
-.game-container {
-    pointer-events: auto; /* Garante que os toques sejam detectados */
-}
-
 /* Media Queries (Responsividade Mobile) */
 
 /* Tablets e telas médias */

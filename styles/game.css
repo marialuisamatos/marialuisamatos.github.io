@@ -190,7 +190,30 @@ button:hover {
     background: #ffffffbd;
 }
 
-/* Media Queries (Responsividade Mobile) */
+.jump-btn {
+    display: none; /* escondido por padrão */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #f5b400;
+    color: #000;
+    cursor: pointer;
+    z-index: 10;
+}
+
+@media (max-width: 600px) {
+    .jump-btn {
+        display: block;
+    }
+}
+
+/* Media Queries (Responsividade Mobile) 
+ As regras existentes foram mantidas aqui para garantir o comportamento
+ em telas menores, sem nenhuma modificação. */
 
 /* Tablets e telas médias */
 

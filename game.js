@@ -4,7 +4,6 @@ const cronometroEl = document.getElementById('cronometro');
 const startBtn = document.getElementById('startBtn');
 const restartBtn = document.getElementById('restartBtn');
 const gameOverText = document.getElementById('gameOverText');
-const jumpBtn = document.getElementById('jumpBtn'); // botão mobile
 
 let segundos = 0;
 let cronometroInterval;
@@ -27,7 +26,7 @@ function resetarJogo() {
   clearInterval(cronometroInterval);
   clearInterval(checkCollision);
   plantaCarnivora.style.animation = 'none';
-  plantaCarnivora.offsetHeight; // força reflow
+  plantaCarnivora.offsetHeight;
   plantaCarnivora.style.animation = 'moveplantaCarnivora 2s infinite linear';
   restartBtn.style.display = 'none';
   startBtn.style.display = 'inline-block';
@@ -39,7 +38,6 @@ function iniciarJogo() {
 
   jogoAtivo = true;
   clearInterval(demoInterval);
-
   iniciarCronometro();
   plantaCarnivora.style.left = '100%';
   plantaCarnivora.style.animation = 'moveplantaCarnivora 2s infinite linear';
@@ -74,45 +72,32 @@ function jump() {
   if (!jogoAtivo) return;
   if (!mario.classList.contains('jump')) {
     mario.classList.add('jump');
-    setTimeout(() => {
-      mario.classList.remove('jump');
-    }, 500);
+    setTimeout(() => mario.classList.remove('jump'), 500);
   }
 }
 
 function iniciarDemo() {
   plantaCarnivora.style.animation = 'moveplantaCarnivora 2s infinite linear';
-
   demoInterval = setInterval(() => {
     const plantaCarnivoraLeft = parseInt(window.getComputedStyle(plantaCarnivora).getPropertyValue('left'));
     const marioBottom = parseInt(window.getComputedStyle(mario).getPropertyValue('bottom'));
-
     if (plantaCarnivoraLeft < 150 && plantaCarnivoraLeft > 100 && marioBottom === 0) {
       mario.classList.add('jump');
-      setTimeout(() => {
-        mario.classList.remove('jump');
-      }, 500);
+      setTimeout(() => mario.classList.remove('jump'), 500);
     }
   }, 10);
 }
 
 // Controles desktop
 document.addEventListener('keydown', (e) => {
-  if ((e.code === 'Space' || e.code === 'ArrowUp') && jogoAtivo) {
-    jump();
-  }
+  if ((e.code === 'Space' || e.code === 'ArrowUp') && jogoAtivo) jump();
 });
 
-// Controles botões
+// Botões principais
 startBtn.addEventListener('click', iniciarJogo);
 restartBtn.addEventListener('click', reiniciarJogo);
 
-// Botão mobile
-jumpBtn.addEventListener('click', () => {
-  if (jogoAtivo) jump();
-});
-
-// Toque na área do jogo (fora do botão) para pular
+// Toque na tela para pular
 const gameDiv = document.querySelector('.game');
 gameDiv.addEventListener('touchstart', (e) => {
   if (e.target.tagName.toLowerCase() === 'button') return;

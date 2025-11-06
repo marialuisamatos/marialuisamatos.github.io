@@ -1,0 +1,200 @@
+/* Estilos Base e Header */
+
+body {
+    margin: 0;
+    background-color: #ffffff;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8rem 0;
+}
+
+.game-container h3 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #000000;
+    font-size: 2.2rem;
+}
+
+.divider {
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #f5b400;
+    margin: 0.8rem auto;
+    border-radius: 2px;
+}
+
+/* Componente Principal do Jogo (.game) */
+
+.game {
+    width: 40%;
+    max-width: 600px;
+    height: 268px;
+    margin: 50px auto 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-image: url('/src/game/cenario.png');
+    background-repeat: repeat-x;
+    background-size: cover;
+    animation: moverFundo 5s linear infinite;
+    border-radius: 5px;
+    border: 2px solid black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Elementos e Animações do Jogo */
+
+@keyframes moverFundo {
+    0% { background-position-x: 0; }
+    100% { background-position-x: -1000px; }
+}
+
+#mario {
+    width: 156px;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+}
+
+#plantaCarnivora {
+    width: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+}
+
+@keyframes jump {
+    0% { bottom: 0; }
+    30% { bottom: 60px; }
+    50% { bottom: 70px; }
+    70% { bottom: 60px; }
+    100% { bottom: 0; }
+}
+
+.jump { animation: jump 0.7s ease-out; }
+
+@keyframes puloInfinito {
+    0%, 100% { bottom: 0; }
+    50% { bottom: 40px; }
+}
+
+#cronometro {
+    font-family: monospace;
+    font-size: 20px;
+    padding: 10px;
+    color: #333;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/* Controles e Tela de Fim de Jogo */
+
+.controls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    padding: 8px 16px;
+    border: none;
+    background: #ffffff95;
+    background-size: 400% 400%;
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    animation: gradientShift 6s ease infinite;
+}
+
+button:hover {
+    background: #ffffffbd;
+}
+
+.gameOverContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#gameOverText {
+    color: red;
+    font-size: 48px;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 2px 2px 6px black;
+    animation: piscar 1s infinite;
+    text-align: center;
+}
+
+#restartBtn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background: #ffffff95;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#restartBtn:hover {
+    background: #ffffffbd;
+}
+
+/* Responsividade */
+
+@media (max-width: 900px) {
+    .game {
+        width: 60%;
+        height: 220px;
+    }
+    #mario { width: 25%; left: 20px; }
+    #plantaCarnivora { width: 8%; }
+    #cronometro { font-size: 18px; top: 5px; left: 5px; }
+    #gameOverText { font-size: 36px; }
+    #restartBtn { padding: 10px 20px; font-size: 14px; }
+}
+
+@media (max-width: 600px) {
+    .game {
+        width: 90%;
+        height: 180px;
+    }
+    #mario { width: 30%; left: 10px; }
+    #plantaCarnivora { width: 10%; }
+    #cronometro { font-size: 16px; top: 5px; left: 5px; }
+    .controls { gap: 5px; }
+    #gameOverText { font-size: 28px; }
+    #restartBtn { padding: 8px 16px; font-size: 12px; }
+}
+
+@media (max-width: 400px) {
+    .game { height: 150px; }
+    #mario { width: 35%; left: 8px; }
+    #plantaCarnivora { width: 12%; }
+    #cronometro { font-size: 14px; }
+    .controls button { padding: 6px 12px; font-size: 12px; }
+    #gameOverText { font-size: 24px; }
+    #restartBtn { padding: 6px 12px; font-size: 12px; }
+}

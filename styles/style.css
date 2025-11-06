@@ -526,6 +526,42 @@ position: relative;
 
 /* Ajuste Responsivo para o Mobile */
 @media (max-width: 768px) {
+  /* CORREÇÕES PARA A SEÇÃO HERO/SOBRE */
+  .hero-grid {
+    grid-template-columns: 1fr; /* Muda de 2 para 1 coluna */
+    text-align: center; /* Centraliza o texto */
+  }
+  
+  .portrait-wrap {
+    margin: 2rem auto 0; /* Coloca a imagem abaixo do texto e centraliza */
+  }
+  
+  .socials,
+  .hero-cta {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha */
+  }
+  
+  .btn-outline {
+      margin-left: 0;
+      margin-top: 10px; /* Adiciona um espaço entre os botões quando empilhados */
+  }
+
+  .tecnologias,
+  .projects {
+    padding: 40px 15px; /* Reduz padding vertical em seções */
+  }
+
+  .hero {
+    padding: 2rem 0; /* Reduz padding do Hero */
+  }
+
+  .grid-tech {
+    max-width: 95%;
+  }
+  
+  /* Regras de responsividade do carrossel */
   .carousel-container {
     padding: 0 10px; 
   }
@@ -535,27 +571,12 @@ position: relative;
   }
 
   .carousel-btn {
-    display: none; 
-  }
-}
-
-/* Adicionando regras para Telas Grandes de Celulares/Tablets (max-width: 768px) */
-@media (max-width: 768px) {
-  .tecnologias,
-  .projects {
-    padding: 40px 15px; 
-  }
-
-  .hero {
-    padding: 2rem 0; 
-  }
-
-  .grid-tech {
-    max-width: 95%;
+    display: none; /* Remove as setas no mobile para rolagem natural */
   }
 }
 
 /* Adicionando regras para Celulares (max-width: 600px) */
+@media (max-width: 600px) {
 @media (max-width: 600px) {
   .site-header {
     padding: 0.8rem 0;
@@ -573,11 +594,46 @@ position: relative;
     margin: 0 0.5rem;
     font-size: 0.9rem;
   }
-
+  
+  /* REGRAS PRINCIPAIS PARA EMPILHAR E INVERTER O HERO */
   .hero-grid {
+    display: flex; /* MUDANÇA CRÍTICA: Passa para Flexbox para usar flex-direction */
+    flex-direction: column-reverse; /* Coloca a imagem (segundo item no HTML) em cima do texto */
     gap: 1.5rem;
     padding-top: 2rem;
+    text-align: center; 
   }
+  
+  /* Centraliza a imagem no modo empilhado */
+  .portrait-wrap {
+    margin: 0 auto 1.5rem; 
+    width: 250px;
+    height: 250px;
+  }
+  
+  .hero-text .lead {
+    max-width: 90%; 
+    margin: 0 auto 1rem; /* Centraliza o parágrafo */
+  }
+  
+  .socials {
+    justify-content: center; /* Centraliza os links sociais */
+  }
+
+  /* Garante que os botões fiquem centralizados e empilhados */
+  .hero-cta {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+  }
+  
+  .btn,
+  .btn-outline {
+    width: 80%; 
+    margin-left: 0 !important;
+    margin-top: 0.5rem;
+  }
+  /* FIM DO BLOCO HERO */
 
   .hero-text h1 {
     font-size: 2rem; 
@@ -597,6 +653,7 @@ position: relative;
     padding: 1rem;
     gap: 1rem;
   }
+}
 }
 
 @media (max-width: 480px) {

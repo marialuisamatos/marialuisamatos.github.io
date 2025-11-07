@@ -38,7 +38,7 @@ O portfólio é continuamente atualizado! Fique à vontade para explorar, testar
 
 | Plataforma | Link |
 | :--- | :--- |
-| **Portfólio (Site)** | [https://marialuisamatos.github.io/](https://marialuisamatos.github.io/) |
+| **Portfólio (Site)** | [GitHub](https://marialuisamatos.github.io/) |
 | **LinkedIn** | [Perfil do LinkedIn](https://www.linkedin.com/in/maria-luisa-silva/) |
 
 Ficarei feliz em receber seu feedback e estarei continuamente adicionando novos projetos e certificados para refletir minha evolução na área. **Fiquem ligados!**

@@ -48,7 +48,7 @@
         </div>
         <div class="hero-visual">
           <div class="portrait-wrap">
-            <img src="src/isa.jpeg" alt="Isa portrait" class="portrait">
+            <img src="/src/isa.jpg" alt="Isa portrait" class="portrait">
           </div>
         </div>
       </div>
@@ -223,20 +223,21 @@
 
     <!-- Game -->
 
-<div class="game-container" id="game">
-    <h3>Game</h3>
-    <span class="divider"></span>
-    <div class="game">
-        <img src="src/game/mario.png" id="mario" alt="Mario" />
-        <img src="src/game/plantaCarnivora.png" id="plantaCarnivora" alt="plantaCarnivora" />
-        <div id="cronometro">Tempo: 00:00</div>
-        <div class="controls">
-            <h2 id="gameOverText" style="display: none;">Game Over</h2>
-            <button id="startBtn">Iniciar Jogo</button>
-            <button id="restartBtn" style="display: none;">Reiniciar</button>
-        </div>
-    </div>
-</div>
+    <section class="game-container" id="game-section">
+      <h3>Game</h3>
+      <span class="divider"></span>
+
+      <div class="game-area"> <div class="game-wrapper">
+        <canvas id="game"></canvas>
+      </div>
+
+      <div class="game-controls">
+        <img src="/src/game/Controls.png" alt="Controles do Jogo">          
+        <p>Comandos</p>
+      </div>
+
+      </div>
+    </section>
   </main>
 
   <script src="game.js"></script>

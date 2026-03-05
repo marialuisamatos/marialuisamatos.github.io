@@ -46,6 +46,8 @@
     flex: 1;
     max-width: 180px; /* Tamanho pequeno como você pediu */
     text-align: center;
+    margin-top: 50px;
+
 }
 
 .game-controls img {
@@ -60,7 +62,7 @@
 .game-controls p {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
-    color: #333;
+    color: #000000;
     margin-top: 10px;
     font-weight: 600;
 }

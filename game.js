@@ -118,7 +118,7 @@ function setupLevel(level) {
   for (let i = 0; i < levelConfigs[level].starsNeeded; i++) {
     let rx = 100 + Math.random() * 700;
     let ry = 80 + Math.random() * 120;
-    stars.push({ x: rx, y: ry, w: 50, h: 50, collected: false, baseY: ry });
+    stars.push({ x: rx, y: ry, w: 60, h: 60, collected: false, baseY: ry });
   }
 
   enemies = [];
@@ -221,8 +221,8 @@ function draw(){
   ctx.font = "bold 24px Arial";
   ctx.fillText("Vidas: " + lives, canvas.width - 120, 42);
 
-  if(starImg.complete) ctx.drawImage(starImg, 15, 12, 40, 40); 
-  ctx.fillText(starsCount, 60, 42);
+  if(starImg.complete) ctx.drawImage(starImg, 15, 8, 60, 60); 
+  ctx.fillText(starsCount, 80, 42);
 
   ctx.textAlign = "center";
   ctx.fillText("Fase " + currentLevel, canvas.width / 2, 42);

@@ -1,3 +1,79 @@
+.hobbies-section {
+  padding: 80px 0;
+  background: radial-gradient(circle at top, rgba(124, 92, 255, 0.15), transparent 60%);
+}
+
+/* caixa principal */
+.hobbies-box {
+  max-width: 800px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* item estilo “processo do sistema” */
+.hobby {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+/* glow animado tipo loading */
+.hobby::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(124, 92, 255, 0.2), transparent);
+  animation: loadingMove 2.5s infinite;
+}
+
+@keyframes loadingMove {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+/* hover interativo */
+.hobby:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 92, 255, 0.4);
+}
+
+/* ícone */
+.hobby span {
+  font-size: 28px;
+  filter: drop-shadow(0 0 6px rgba(124, 92, 255, 0.6));
+}
+
+/* texto */
+.hobby h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.hobby p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
 /* Reset e Estilos Base */
 
 * {
@@ -46,7 +122,7 @@ a {
   display: block;
   width: 60px;
   height: 4px;
-  background: #f5b400;
+  background: #7b70ff;
   margin: 0.8rem auto;
   border-radius: 2px;
 }
@@ -66,36 +142,36 @@ a {
 }
 
 .btn {
-  background-color: #f5b400;
+  background-color: #7b70ff;
   color: #fff;
   border: none;
 }
 
 .btn:hover {
-  background-color: #e0a600;
+  background-color: #7b70ff;
 }
 
 .btn-outline {
-  border: 2px solid #f5b400;
-  color: #f5b400;
+  border: 2px solid #7b70ff;
+  color: #7b70ff;
   background: none;
   margin-left: 1rem;
 }
 
 .btn-outline:hover {
-  background-color: #f5b400;
+  background-color: #7b70ff;
   color: #fff;
 }
 
 .btn-small {
-  border: 1px solid #f5b400;
-  color: #f5b400;
+  border: 1px solid #7b70ff;
+  color: #7b70ff;
   padding: 0.4rem 1rem;
   font-size: 0.9rem;
 }
 
 .btn-small:hover {
-  background: #f5b400;
+  background: #7b70ff;
   color: #fff;
 }
 
@@ -130,7 +206,7 @@ a {
 }
 
 .nav a:hover {
-  color: #f5b400;
+  color: #7b70ff;
 }
 
 /* Hero Section (Seção Principal/Destaque) */
@@ -149,7 +225,7 @@ a {
 }
 
 .hero-text .label {
-  color: #f5b400;
+  color: #7b70ff;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -162,7 +238,7 @@ a {
 }
 
 .hero-text .accent {
-  color: #f5b400;
+  color: #7b70ff;
 }
 
 .hero-text .lead {
@@ -181,7 +257,7 @@ a {
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
-  background: #f5b400;
+  background: #7b70ff;
 }
 
 .portrait {
@@ -230,7 +306,7 @@ a {
 .tech-col {
   background: linear-gradient(145deg, #ffffff, #f5f5f5);
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   max-width: 700px;
   min-height: 250px;
   padding: 40px 30px;
@@ -248,7 +324,7 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: #f5b400;
+  background: #7b70ff;
   opacity: 0;
   transition: opacity 0.4s ease;
   z-index: 0;
@@ -260,14 +336,14 @@ a {
 
 .tech-col:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 .tech-col h4 {
   font-size: 24px;
   margin-bottom: 15px;
   font-weight: 700;
-  background: orange;
+  background: #7b70ff;
   background-clip: text;
   font-family: 'Playfair Display', serif;
   -webkit-background-clip: text;
@@ -331,7 +407,7 @@ a {
   font-size: 1.4rem;
   font-family: 'Playfair Display', serif;
   margin-bottom: 0.6rem;
-  color: #f5b400;
+  color: #7b70ff;
 }
 
 .project-body p {
@@ -360,15 +436,15 @@ a {
 }
 
 .socials a:hover {
-  color: #f5b400;
+  color: #7b70ff;
   transform: translateY(-2px);
-  color: #f5b400;
+  color: #7b70ff;
 }
 
 /* Footer (Rodapé) */
 
 .site-footer {
-  background: #f5b400;
+  background: #7b70ff;
   color: white;
   text-align: center;
   font-size: 14px;
@@ -383,24 +459,25 @@ a {
   text-align: center;
   padding: 114px 20px;
   /* APLICANDO O MESMO FUNDO DA SEÇÃO .PROJECTS */
-  background-color: #fafafa; 
+  background-color: #fafafa;
   color: #333;
 }
 
 #certificados h2 {
-    /* Alinha com o estilo do section-header do seu novo CSS */
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+  /* Alinha com o estilo do section-header do seu novo CSS */
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
 }
 
 /* 2. Container do Carousel (o elemento que contém o scroll) */
 .carousel-container {
-position: relative;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1200px; /* Aumentei um pouco mais para dar espaço */
+  max-width: 1200px;
+  /* Aumentei um pouco mais para dar espaço */
   margin: 0 auto;
   /* AUMENTAMOS O ESPAÇO LATERAL para afastar os botões dos cards */
   padding: 0 80px;
@@ -409,23 +486,25 @@ position: relative;
 /* 3. O próprio Carousel (o scroll horizontal) */
 .carousel {
   display: flex;
-  gap: 25px; /* Espaçamento entre os cards */
+  gap: 25px;
+  /* Espaçamento entre os cards */
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 20px 0; 
-  scrollbar-width: none; /* Esconde a barra de rolagem (Firefox) */
+  padding: 20px 0;
+  scrollbar-width: none;
+  /* Esconde a barra de rolagem (Firefox) */
 }
 
 .carousel::-webkit-scrollbar {
-    display: none; 
+  display: none;
 }
 
 .certificado-card {
-  min-width: 320px; 
+  min-width: 320px;
   background-color: #ffffff;
   border-radius: 12px;
-  padding: 20px; 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   flex: none;
   transition: all 0.3s ease;
   border: 1px solid #eee;
@@ -434,231 +513,247 @@ position: relative;
 }
 
 .certificado-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 6px; 
-    background: #f5b400; 
-    transition: transform 0.4s ease;
-    transform: translateY(6px); 
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #7b70ff;
+  transition: transform 0.4s ease;
+  transform: translateY(6px);
 }
 
 .certificado-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .certificado-card:hover::after {
-    transform: translateY(0); 
+  transform: translateY(0);
 }
 
 .certificado-card img {
-  width: 100%; 
-  height: 180px; 
-  object-fit: cover; 
-  border-radius: 8px; 
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
   margin-bottom: 15px;
   border: 1px solid #f0f0f0;
   transition: transform 0.3s ease;
 }
 
 .certificado-card h3 {
-    font-size: 1.3em;
-    margin: 10px 0 5px;
-    color: #f5b400; 
-    font-family: 'Playfair Display', serif;
+  font-size: 1.3em;
+  margin: 10px 0 5px;
+  color: #7b70ff;
+  font-family: 'Playfair Display', serif;
 }
 
 .certificado-card p {
-    color: #777;
-    font-size: 0.95em;
-    margin-bottom: 15px;
+  color: #777;
+  font-size: 0.95em;
+  margin-bottom: 15px;
 }
 
 .certificado-card a {
   display: inline-block;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
-  border: 1px solid #f5b400;
-  color: #f5b400;
+  border: 1px solid #7b70ff;
+  color: #7b70ff;
   background: none;
   border-radius: 30px;
   font-weight: 600;
 }
 
 .certificado-card a:hover {
-    background: #f5b400;
-    color: #fff; 
-    transform: scale(1.05);
+  background: #7b70ff;
+  color: #fff;
+  transform: scale(1.05);
 }
 
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.9); 
-  border: 1px solid #f5b400; /* Borda Dourada */
-  color: #f5b400;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #7b70ff;
+  /* Borda Dourada */
+  color: #7b70ff;
   font-size: 1.5em;
   padding: 15px;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s;
-  z-index: 10; 
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-btn:hover {
-  background-color: #f5b400; 
+  background-color: #7b70ff;
   color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .prev {
-  left: 10px; 
+  left: 10px;
 }
 
 .next {
-  right: 10px; 
+  right: 10px;
 }
 
 /* Ajuste Responsivo para o Mobile */
 @media (max-width: 768px) {
+
   /* CORREÇÕES PARA A SEÇÃO HERO/SOBRE */
   .hero-grid {
-    grid-template-columns: 1fr; /* Muda de 2 para 1 coluna */
-    text-align: center; /* Centraliza o texto */
+    grid-template-columns: 1fr;
+    /* Muda de 2 para 1 coluna */
+    text-align: center;
+    /* Centraliza o texto */
   }
-  
+
   .portrait-wrap {
-    margin: 2rem auto 0; /* Coloca a imagem abaixo do texto e centraliza */
+    margin: 2rem auto 0;
+    /* Coloca a imagem abaixo do texto e centraliza */
   }
-  
+
   .socials,
   .hero-cta {
     justify-content: center;
     display: flex;
-    flex-wrap: wrap; /* Permite que os botões quebrem a linha */
+    flex-wrap: wrap;
+    /* Permite que os botões quebrem a linha */
   }
-  
+
   .btn-outline {
-      margin-left: 0;
-      margin-top: 10px; /* Adiciona um espaço entre os botões quando empilhados */
+    margin-left: 0;
+    margin-top: 10px;
+    /* Adiciona um espaço entre os botões quando empilhados */
   }
 
   .tecnologias,
   .projects {
-    padding: 40px 15px; /* Reduz padding vertical em seções */
+    padding: 40px 15px;
+    /* Reduz padding vertical em seções */
   }
 
   .hero {
-    padding: 2rem 0; /* Reduz padding do Hero */
+    padding: 2rem 0;
+    /* Reduz padding do Hero */
   }
 
   .grid-tech {
     max-width: 95%;
   }
-  
+
   /* Regras de responsividade do carrossel */
   .carousel-container {
-    padding: 0 10px; 
+    padding: 0 10px;
   }
 
   .certificado-card {
-    min-width: 280px; 
+    min-width: 280px;
   }
 
   .carousel-btn {
-    display: none; /* Remove as setas no mobile para rolagem natural */
+    display: none;
+    /* Remove as setas no mobile para rolagem natural */
   }
 }
 
 /* Adicionando regras para Celulares (max-width: 600px) */
 @media (max-width: 600px) {
-@media (max-width: 600px) {
-  .site-header {
-    padding: 0.8rem 0;
-  }
+  @media (max-width: 600px) {
+    .site-header {
+      padding: 0.8rem 0;
+    }
 
-  .header-inner {
-    flex-direction: column; 
-  }
+    .header-inner {
+      flex-direction: column;
+    }
 
-  .brand-name {
-    margin-bottom: 10px;
-  }
+    .brand-name {
+      margin-bottom: 10px;
+    }
 
-  .nav a {
-    margin: 0 0.5rem;
-    font-size: 0.9rem;
-  }
-  
-  /* REGRAS PRINCIPAIS PARA EMPILHAR E INVERTER O HERO */
-  .hero-grid {
-    display: flex; /* MUDANÇA CRÍTICA: Passa para Flexbox para usar flex-direction */
-    flex-direction: column-reverse; /* Coloca a imagem (segundo item no HTML) em cima do texto */
-    gap: 1.5rem;
-    padding-top: 2rem;
-    text-align: center; 
-  }
-  
-  /* Centraliza a imagem no modo empilhado */
-  .portrait-wrap {
-    margin: 0 auto 1.5rem; 
-    width: 250px;
-    height: 250px;
-  }
-  
-  .hero-text .lead {
-    max-width: 90%; 
-    margin: 0 auto 1rem; /* Centraliza o parágrafo */
-  }
-  
-  .socials {
-    justify-content: center; /* Centraliza os links sociais */
-  }
+    .nav a {
+      margin: 0 0.5rem;
+      font-size: 0.9rem;
+    }
 
-  /* Garante que os botões fiquem centralizados e empilhados */
-  .hero-cta {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-  }
-  
-  .btn,
-  .btn-outline {
-    width: 80%; 
-    margin-left: 0 !important;
-    margin-top: 0.5rem;
-  }
-  /* FIM DO BLOCO HERO */
+    /* REGRAS PRINCIPAIS PARA EMPILHAR E INVERTER O HERO */
+    .hero-grid {
+      display: flex;
+      /* MUDANÇA CRÍTICA: Passa para Flexbox para usar flex-direction */
+      flex-direction: column-reverse;
+      /* Coloca a imagem (segundo item no HTML) em cima do texto */
+      gap: 1.5rem;
+      padding-top: 2rem;
+      text-align: center;
+    }
 
-  .hero-text h1 {
-    font-size: 2rem; 
-  }
+    /* Centraliza a imagem no modo empilhado */
+    .portrait-wrap {
+      margin: 0 auto 1.5rem;
+      width: 250px;
+      height: 250px;
+    }
 
-  .grid-tech {
-    grid-template-columns: 1fr 1fr; 
-    gap: 15px;
-    overflow-x: hidden; 
-  }
+    .hero-text .lead {
+      max-width: 90%;
+      margin: 0 auto 1rem;
+      /* Centraliza o parágrafo */
+    }
 
-  .tech-col {
-    padding: 25px 15px;
-  }
+    .socials {
+      justify-content: center;
+      /* Centraliza os links sociais */
+    }
 
-  .project-card {
-    padding: 1rem;
-    gap: 1rem;
+    /* Garante que os botões fiquem centralizados e empilhados */
+    .hero-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn,
+    .btn-outline {
+      width: 80%;
+      margin-left: 0 !important;
+      margin-top: 0.5rem;
+    }
+
+    /* FIM DO BLOCO HERO */
+
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+
+    .grid-tech {
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      overflow-x: hidden;
+    }
+
+    .tech-col {
+      padding: 25px 15px;
+    }
+
+    .project-card {
+      padding: 1rem;
+      gap: 1rem;
+    }
   }
-}
 }
 
 /* VOLUNTARIADO */
 .voluntariado {
-  padding: 6rem 0; /* aumentei o respiro vertical */
+  padding: 6rem 0;
+  /* aumentei o respiro vertical */
   background-color: #fafafa;
   overflow: hidden;
 }
@@ -666,7 +761,8 @@ position: relative;
 .voluntariado-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem; /* mais espaço igual ao Canva */
+  gap: 5rem;
+  /* mais espaço igual ao Canva */
   align-items: center;
 }
 
@@ -683,7 +779,8 @@ position: relative;
 
 .voluntariado-text h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem; /* levemente maior */
+  font-size: 2rem;
+  /* levemente maior */
   color: #ec8ec0;
   margin-bottom: 1rem;
 }
@@ -695,7 +792,7 @@ position: relative;
 }
 
 .highlight {
-  color: #f5b400;
+  color: #7b70ff;
   font-weight: 600;
 }
 
@@ -709,7 +806,8 @@ position: relative;
 }
 
 .voluntariado-images img {
-  max-width: 581px; /* controla tamanho */
+  max-width: 581px;
+  /* controla tamanho */
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -777,7 +875,7 @@ position: relative;
 
   .hero-cta {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
   }
 
@@ -787,34 +885,34 @@ position: relative;
     margin-left: 0 !important;
     margin-top: 0.5rem;
   }
-  
+
   .grid-tech {
-    grid-template-columns: 1fr; 
-    max-width: 100%; 
+    grid-template-columns: 1fr;
+    max-width: 100%;
   }
-  
+
   .socials {
-    justify-content: center; 
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
-  
+
   .carousel-container {
-    padding: 0 10px; 
+    padding: 0 10px;
   }
 
   .certificado-card {
-    min-width: 280px; 
+    min-width: 280px;
     min-height: auto;
   }
-  
- 
+
+
   .carousel-btn {
-    display: none; 
+    display: none;
   }
-  
+
   .certificado-card img {
-      height: 160px; 
+    height: 160px;
   }
 }

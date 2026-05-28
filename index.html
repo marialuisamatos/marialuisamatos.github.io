@@ -54,11 +54,65 @@
             <a class="btn" href="#projects">Projetos</a>
             <a class="btn btn-outline" href="#game">Vamos Jogar?</a>
           </div>
+          
         </div>
         <div class="hero-visual">
           <div class="portrait-wrap">
             <img src="/src/isa.jpg" alt="Isa portrait" class="portrait">
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Now Playing section (standalone cinematic widget) -->
+    <section id="now-playing" class="now-playing-section">
+      <div class="container section-header">
+        <h2>Music</h2>
+        <span class="divider"></span>
+      </div>
+
+      <div class="container now-playing-shell">
+        <div class="floating-player">
+          <div class="player-left">
+            <div class="album-wrap">
+              <div class="album-outer">
+                <img src="/src/mikrokosmos.png" alt="Mikrokosmos album" class="album-cover">
+                <button class="play-btn" aria-label="Play/Pause">▶</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="player-center">
+            <div class="meta-title">Added to favorites 💜</div>
+            <div class="meta-track">BTS — Mikrokosmos</div>
+            <div class="meta-status">Album: Map of the Soul: Persona</div>
+
+            <div class="visual-and-lyrics">
+              <div class="visualizer" aria-hidden="true">
+                <span class="vbar v1"></span>
+                <span class="vbar v2"></span>
+                <span class="vbar v3"></span>
+                <span class="vbar v4"></span>
+                <span class="vbar v5"></span>
+              </div>
+
+              <div class="lyric-snippet">"Shine like the stars in a tiny mikrokosmos"</div>
+            </div>
+
+            <div class="progress-row">
+              <div class="progress-left">0:34</div>
+              <div class="progress-track">
+                <div class="progress-fill" data-progress="36"></div>
+              </div>
+              <div class="progress-right">3:12</div>
+            </div>
+          </div>
+
+          <div class="player-right">
+            <div class="player-glow"></div>
+          </div>
+
+          <div class="section-stars" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -93,8 +147,8 @@
         <div class="tech-col">
           <h4>Testes Automatizados</h4>
           <ul>
-            <li>Cypress</li>
-            <li>Selenium</li>
+            <li>Cypress</li><br>
+            <li>Selenium</li><br>
             <li>PyAutoGui</li>
           </ul>
         </div>
@@ -129,7 +183,7 @@
       </div>
     </section>
 
-    <!-- Cards de Projetos -->
+    <!-- idiomas section removed (replaced by embedded Now Playing widget inside hero) -->
 
     <section id="projects" class="projects">
       <div class="container section-header">
@@ -141,13 +195,16 @@
 
         <article class="project-card">
           <div class="project-media">
-            <img src="src//projects/Spotify.png" alt="Project 1">
+            <img src="src//projects/coffeekat.jpeg" alt="Project 1">
           </div>
           <div class="project-body">
-            <h3>Spotify</h3>
-            <p>Repica interativa do Spotify com HTML, CSS, React.JS e JavaScript. Projeto realizado na Alura.</p>
-            <a class="btn-small"
-              href="https://github.com/marialuisamatos/Alura/tree/main/Imersao%20FrontEnd%202%20Edicao" target="_blank"
+            <h3>CoffeeKat</h3>
+            <p>Projeto de e-commerce temático desenvolvido em React e Node.js (com Firebase), focado em aplicar as
+              melhores práticas de Segurança da Informação. A arquitetura conta com proteção de headers (Helmet.js),
+              CORS restrito, controle de acesso em cadeia (RBAC), mitigação de força bruta via Rate Limiting e gestão
+              segura de sessões com cookies HttpOnly/SameSite, garantindo uma aplicação blindada contra as principais
+              vulnerabilidades da web.</p>
+            <a class="btn-small" href="https://github.com/SempreAndre/coffeekat" target="_blank"
               rel="noopener noreferrer">Ver Projeto</a>
           </div>
         </article>
@@ -158,8 +215,10 @@
           </div>
           <div class="project-body">
             <h3>Gerenciamento de Comentários + IA</h3>
-            <p>Gerenciamento de Comentários usando Firebase e a API da IA (Google Gemini). Projeto realizado na
-              Faculdade(FICR) + Porto Digital.</p>
+            <p>Módulo de moderação inteligente de comentários desenvolvido na FICR em parceria com o Porto Digital.
+              Utilizando Node.js, Firebase e a API do Google Gemini, o sistema analisa o conteúdo em tempo real para
+              identificar, barrar e excluir automaticamente comentários ofensivos, garantindo um ambiente digital
+              seguro.</p>
             <a class="btn-small" href="https://github.com/vitoryamedeiros/rsd-SJCC" target="_blank"
               rel="noopener noreferrer">Ver Projeto</a>
           </div>
@@ -167,14 +226,14 @@
 
         <article class="project-card">
           <div class="project-media">
-            <img src="src//projects/automacao.png" alt="Project 3">
+            <img src="src//projects/cypress.jpeg" alt="Project 3">
           </div>
           <div class="project-body">
             <h3>Testes Automatizados</h3>
-            <p>Projeto de testes End-to-End (E2E) desenvolvido em Cypress para validar a funcionalidade de pesquisa de
-              filmes. Os testes cobriram cenários cruciais como busca por dados válidos/inválidos, caracteres especiais
-              e campo vazio, garantindo a robustez e a qualidade da experiência do usuário (UX).</p>
-            <a class="btn-small" href="https://github.com/marialuisamatos/Testes" target="_blank"
+            <p>Projeto de testes E2E em Cypress focado em validar a segurança do sistema CID Shield. A cobertura incluiu
+              fluxos de autenticação, proteção contra injeções (SQL/NoSQL), isolamento de perfis (RBAC) e testes de
+              resiliência offline, garantindo uma aplicação robusta e segura.</p>
+            <a class="btn-small" href="https://github.com/marialuisamatos/Testes-do-CID.git" target="_blank"
               rel="noopener noreferrer">Ver Projeto</a>
           </div>
         </article>
@@ -273,7 +332,7 @@
           <h3>AWSome Women</h3>
 
           <p>
-            O <span class="highlight">Awsome Women Community Summit Brasil</span> é um evento global
+            O <span class="highlight">AWSome Women Community Summit Brasil</span> é um evento global
             organizado por mulheres da comunidade técnica da AWS.
           </p>
 
